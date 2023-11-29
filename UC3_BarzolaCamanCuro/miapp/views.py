@@ -49,3 +49,10 @@ def inicio(request):
         'cursos': cursos,
     }
     return render(request, 'miapp/inicio.html', context)
+
+def examen(request):
+    informacion_examen = {
+        'titulo': 'Información del Examen',
+        'descripcion': 'Lista de integrantes',
+    }
+    return render(request, 'miapp/examen.html', informacion_examen)
