@@ -1,8 +1,13 @@
 from django.shortcuts import render
 
 def home(request):
-    context = {
-        'title': 'UNTELS',
-        'content': 'Este es tu contenido.',
-    }
-    return render(request, 'miapp/home.html', context)
+    title = "Untels"
+    elementos_lista = [
+        "Análisis y Diseño de Sistemas",
+        "Introducción a la Programación",
+        "Algoritmos y Estructura de Datos",
+        "Sistemas de Información",
+        "Sistemas Operativos",
+        "Arquitectura de Computadoras"
+    ]
+    return render(request, 'miapp/home.html', {'title': title, 'elementos_lista': elementos_lista})

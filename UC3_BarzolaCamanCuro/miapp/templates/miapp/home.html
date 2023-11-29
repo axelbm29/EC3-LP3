@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 74, 152, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f8b434;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .logo-container {
+            max-width: 15%;
+            margin-left: 10px;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        li {
+            background-color: #f8b434;
+            color: #fff;
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 2;
+        }
+
+        footer {
+            background-color: #f8b434;
+            color: #fff;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    {% load static %}
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'miapp/images/logoUntels2.png' %}" alt="UNTELS Logo">
+        </div>
+    </header>
+    <main>
+        <h1>Le damos la bienvenida a la {{ title }}</h1>
+        <ul>
+            {% for elemento in elementos_lista %}
+            <li>{{ elemento }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <strong>Barzola - Caman - Curo | LP3 - Untels</strong>
+    </footer>
+</body>
+</html>
