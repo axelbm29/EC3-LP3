@@ -16,6 +16,17 @@
             background-color: #f8b434;
             color: #fff;
             padding: 10px;
+            display: flex;
+        }
+
+        a {
+            text-decoration: none;
+            color: #717171;
+             
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         .logo-container {
@@ -26,6 +37,21 @@
         .logo-container img {
             max-width: 100%;
             height: auto;
+        }
+
+        nav {
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        nav ul {
+            display: inline-block;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 20px;
         }
 
         main {
@@ -70,18 +96,20 @@
     {% load static %}
 </head>
 <body>
-    <header>
+    <header style="display: flex; align-items: center; justify-content: space-between;">
         <div class="logo-container">
             <img src="{% static 'miapp/images/logoUntels2.png' %}" alt="UNTELS Logo">
         </div>
+        <nav>
+            <ul class="menu-list" style="list-style-type: none; padding: 0; margin: 0; display: flex;">
+                <li style="margin-left: 20px;"><strong><a href="{% url 'inicio' %}">Inicio</a></li></strong>
+                <li style="margin-left: 20px;"><strong><a href="{% url 'primos' %}">Ver lista de números primos</a></strong></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
         <h1>Le damos la bienvenida a la {{ title }}</h1>
-        <ul>
-            {% for elemento in elementos_lista %}
-            <li>{{ elemento }}</li>
-            {% endfor %}
-        </ul>
     </main>
     <footer>
         <strong>Barzola - Caman - Curo | LP3 - Untels</strong>
